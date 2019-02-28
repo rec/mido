@@ -167,7 +167,7 @@ class Input(PortCommon, ports.BaseInput):
         except ValueError:
             # Ignore invalid message.
             return
-
+        msg.time = msg_data[1]
         (self._callback or self._queue.put)(msg)
 
 
